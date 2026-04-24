@@ -20,6 +20,8 @@ class VolunteerTask extends Model
         'EndDate'
     ];
 
+    public $timestamps = false;
+
     public function volunteer()
     {
         return $this->belongsTo(Volunteer::class, 'VoulnteerID', 'id');

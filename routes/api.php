@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VolunteerController;
 use App\Http\Controllers\Admin\EvaluationController;
 use App\Http\Controllers\Admin\ComplaintController;
+use App\Http\Controllers\JobTitleController;
 
 
 /*
@@ -44,13 +45,15 @@ Route::prefix('admin')->group(function () {
     Route::get('complaints/{id}', [ComplaintController::class, 'show']);
     Route::put('complaints/{id}', [ComplaintController::class, 'update']);
 
+
+    // Job Titles 
+    Route::get('job-titles', [JobTitleController::class, 'index']);
+    Route::post('job-titles', [JobTitleController::class, 'store']);
+    Route::get('job-titles/{jobTitle}', [JobTitleController::class, 'show']);
+    Route::put('job-titles/{jobTitle}', [JobTitleController::class, 'update']);
+    Route::delete('job-titles/{jobTitle}', [JobTitleController::class, 'destroy']);
+
 });
-
-
-
-
-
-
 
 
 
