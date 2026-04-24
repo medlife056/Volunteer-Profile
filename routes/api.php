@@ -7,6 +7,8 @@ use App\Http\Controllers\VolunteerController;
 use App\Http\Controllers\Admin\EvaluationController;
 use App\Http\Controllers\Admin\ComplaintController;
 use App\Http\Controllers\JobTitleController;
+use App\Http\Controllers\VolunteerTaskController;
+
 
 
 /*
@@ -52,6 +54,15 @@ Route::prefix('admin')->group(function () {
     Route::get('job-titles/{jobTitle}', [JobTitleController::class, 'show']);
     Route::put('job-titles/{jobTitle}', [JobTitleController::class, 'update']);
     Route::delete('job-titles/{jobTitle}', [JobTitleController::class, 'destroy']);
+
+    // Volunteer Tasks
+    Route::get('volunteer-tasks', [VolunteerTaskController::class, 'index']);
+    Route::post('volunteer-tasks', [VolunteerTaskController::class, 'store']);
+    Route::get('volunteer-tasks/{volunteerTask}', [VolunteerTaskController::class, 'show']);
+    Route::put('volunteer-tasks/{volunteerTask}', [VolunteerTaskController::class, 'update']);
+    Route::delete('volunteer-tasks/{volunteerTask}', [VolunteerTaskController::class, 'destroy']);
+
+
 
 });
 
