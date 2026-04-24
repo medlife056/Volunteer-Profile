@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\EvaluationController;
 use App\Http\Controllers\Admin\ComplaintController;
 use App\Http\Controllers\JobTitleController;
 use App\Http\Controllers\VolunteerTaskController;
+use App\Http\Controllers\InitiativeController;
 
 
 
@@ -62,12 +63,14 @@ Route::prefix('admin')->group(function () {
     Route::put('volunteer-tasks/{volunteerTask}', [VolunteerTaskController::class, 'update']);
     Route::delete('volunteer-tasks/{volunteerTask}', [VolunteerTaskController::class, 'destroy']);
 
-
+    // Initiatives 
+    Route::get('initiatives', [InitiativeController::class, 'index']);
+    Route::post('initiatives', [InitiativeController::class, 'store']);
+    Route::get('initiatives/{initiative}', [InitiativeController::class, 'show']);
+    Route::put('initiatives/{initiative}', [InitiativeController::class, 'update']);
+    Route::delete('initiatives/{initiative}', [InitiativeController::class, 'destroy']);
 
 });
-
-
-
 
 
 
